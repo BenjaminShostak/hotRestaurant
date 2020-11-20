@@ -1,3 +1,3 @@
-let tables = ['table'];
+let tables = [];
 
 module.exports = tables;

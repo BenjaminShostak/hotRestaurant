@@ -1,5 +1,3 @@
-const { findNodeModule } = require("jest-resolve")
-
-let waitlist = ['wait']
+let waitlist = []
 
 module.exports = waitlist

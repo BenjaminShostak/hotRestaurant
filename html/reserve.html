@@ -76,11 +76,13 @@
               customerID: $(".uniqueID").val().trim()
             };
             $.post('/api/tables', getReservation)
+
             alert("Registered Successfully");
             $(".customerN").val("");
             $(".phoneN").val("");
             $(".emailA").val("");
             $(".uniqueID").val("");
+
           }
           
         </script>
