@@ -24,7 +24,7 @@
                          Make Reservation
                     </button>
                 </a>
-                <a href="./index.html">
+                <a href="/">
                     <button type="button" class="btn btn-lg btn-light btn-outline-secondary">
                         <i class="fas fa-home"></i>
                     </button>
@@ -57,13 +57,39 @@
             <p>Control Panel</p>
             <p>
                 <a href="#" id="clear">Clear Table</a>
+                <a href="#" id="clear">Clear Waitlist</a>
                 <a href="/api/tables">API Table Link</a>
                 <a href="/api/waitlist">API Wait List</a>
             </p>
         </div>
     </div>
-<script>
+    
+<script type="text/javascript">
 
+    function createTables(){
+        $.ajax({ url: "/api/tables", method: "GET" })
+      .then(function(tableData) {
+
+        console.log(tableData);
+
+        for (var i = 0; i < tableData.length; i++) {
+
+          var tableList = $("#tableSection");
+          var listItem = $("<li class='list-group-item mt-4'>");
+
+          listItem.append(
+            $("<h2>").text("Table #" + (i + 1)),
+            $("<hr>"),
+            $("<h2>").text("ID: " + tableData[i].customerID),
+            $("<h2>").text("Name: " + tableData[i].customerName),
+            $("<h2>").text("Email: " + tableData[i].customerEmail),
+            $("<h2>").text("Phone: " + tableData[i].phoneNumber)
+          );
+
+          tableList.append(listItem);
+        }
+      });
+  }
 </script>
 </body>
 
