@@ -3,9 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>The Best Restaurant in the World</title>
+    <style>
+        .realTitle {
+            text-align: center;
+        }
+        .realDesc {
+            text-align: center;
+        }
+    </style>
+  
 </head>
 <body>
-    <h1>Hello World</h1>
+    <h1>Get on the RSVP list fast! Or be left in the dust!</h1>
+    <div class="jumbotron">
+        <h1 class="display-4 realTitle">Book it now!</h1>
+        <p class="lead realDesc">Make an RSVP for the most amazing restaurant in the world.</p>
+        <hr class="my-4">
+       
+        <a class="btn btn-primary btn-lg text-success" href="/reserve" role="button">RSVP</a>
+        <a class="btn btn-primary btn-lg float-right" href="/tables" role="button">Waiting List</a>
+      </div>
+      <footer class="footer">
+        <div class="container">
+          <p><a href="/api/tables">API Table Link</a> | <a href="/api/waitlist">API Wait List</a>
+        </div>
+      </footer>
 </body>
 </html>
