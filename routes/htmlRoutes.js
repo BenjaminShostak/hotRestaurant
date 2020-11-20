@@ -1,20 +1,19 @@
-var path = require("path");
+//modules
+const express = require('express');
+const path = require('path');
 
-function createHTMLRoutes(app) {
-  app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "../html/index.html"));
-  });
+const htmlRouter = express.Router();
 
-  app.get("/viewtables", (req, res) => {
-    res.sendFile(path, join(__dirname, "../html/viewtables.html"));
-  });
+htmlRouter.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, "../html/index.html"));
+});
 
-  app.get("/reserve", (req, res) => {
-    res.sendFile(path, join(__dirname, "../html/reserve.html"));
-  });
+htmlRouter.get('/tables', (req,res) => {
+  res.sendFile(path, join(__dirname, "../html/viewtables.html"));
+})
 
-  console.log(app)
-  return 'done'
-}
+htmlRouter.get('/reserve', (req, res) => {
+  res.sendFile(path, join(__dirname, "../html/reserve.html"));
+})
 
-module.exports = createRoutes
+module.exports = htmlRouter
