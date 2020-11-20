@@ -1,3 +1,3 @@
-let waitlist = [];
+let tables = [];
 
 module.exports = tables;
