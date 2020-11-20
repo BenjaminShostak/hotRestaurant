@@ -6,17 +6,25 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <title>The Best Restaurant in the World</title>
     <style>
+        body {
+            background-image: url("./redwall.jpg");
+        }
         .realTitle {
             text-align: center;
         }
         .realDesc {
             text-align: center;
         }
+        .rsvp {
+            text-align: center;
+            color: antiquewhite;
+        }
     </style>
   
 </head>
 <body>
-    <h1>Get on the RSVP list fast! Or be left in the dust!</h1>
+    <h1 class="rsvp">Get on the RSVP list now!</h1>
+    <div class="container">
     <div class="jumbotron">
         <h1 class="display-4 realTitle">Book it now!</h1>
         <p class="lead realDesc">Make an RSVP for the most amazing restaurant in the world.</p>
@@ -29,6 +37,7 @@
         <div class="container">
           <p><a href="/api/tables">API Table Link</a> | <a href="/api/waitlist">API Wait List</a>
         </div>
+    </div>
       </footer>
 </body>
 </html>
