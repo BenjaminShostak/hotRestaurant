@@ -26,13 +26,13 @@ apiRouter.post('/tables', (req, res) => {
     }
 })
 
-apiRouter.delete("/tables/clear", (req, res) => {
-    tables = [];
+apiRouter.post("/tables/clear", (req, res) => {
+    tables.length = 0;
     res.json('Tables cleared')
 });
 
 apiRouter.delete("/waitlist/clear", (req, res) => {
-    waitlist = [];
+    waitlist.length = 0;
     res.json("Waitlist cleared");
 });
 
