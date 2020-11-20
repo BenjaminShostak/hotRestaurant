@@ -9,11 +9,11 @@ htmlRouter.get('/', (req, res) => {
 });
 
 htmlRouter.get('/tables', (req,res) => {
-  res.sendFile(path, join(__dirname, "../html/viewtables.html"));
+  res.sendFile(path.join(__dirname, "../html/viewtables.html"));
 })
 
 htmlRouter.get('/reserve', (req, res) => {
-  res.sendFile(path, join(__dirname, "../html/reserve.html"));
+  res.sendFile(path.join(__dirname, "../html/reserve.html"));
 })
 
 module.exports = htmlRouter
