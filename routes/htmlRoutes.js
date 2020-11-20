@@ -1,6 +1,6 @@
 var path = require("path");
 
-function createRoutes(app) {
+function createHTMLRoutes(app) {
   app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "../html/index.html"));
   });
@@ -14,6 +14,7 @@ function createRoutes(app) {
   });
 
   console.log(app)
+  return 'done'
 }
 
 module.exports = createRoutes
