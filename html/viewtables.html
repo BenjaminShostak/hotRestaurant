@@ -63,12 +63,15 @@
             </p>
         </div>
     </div>
-    
+
 <script type="text/javascript">
 
     function createTables(){
         $.ajax({ url: "/api/tables", method: "GET" })
       .then(function(tableData) {
+          if(tableData.length<1){
+              return;
+          }
 
         console.log(tableData);
 
@@ -90,6 +93,37 @@
         }
       });
   }
+
+  function createWaitlist(){
+        $.ajax({ url: "/api/waitlist", method: "GET" })
+      .then(function(waitlistData) {
+        if(waitlistData.length<1){
+              return;
+          }
+
+        console.log(waitlistData);
+
+        for (var i = 0; i < waitlistData.length; i++) {
+
+          var waitList = $("#waitlistSection");
+          var listItem = $("<li class='list-group-item mt-4'>");
+
+          listItem.append(
+            $("<h2>").text("Table #" + (i + 1)),
+            $("<hr>"),
+            $("<h2>").text("ID: " + tableData[i].customerID),
+            $("<h2>").text("Name: " + tableData[i].customerName),
+            $("<h2>").text("Email: " + tableData[i].customerEmail),
+            $("<h2>").text("Phone: " + tableData[i].phoneNumber)
+          );
+
+          tableList.append(listItem);
+        }
+      });
+  }
+
+  createTables();
+  createWaitlist();
 </script>
 </body>
 
