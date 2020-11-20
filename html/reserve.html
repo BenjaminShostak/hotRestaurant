@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <title>Make a Reservation!</title>
-  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -15,6 +15,11 @@
             <hr class="my-4">
             
             <a class="btn btn-primary btn-lg" href="#" role="button">Reserve Your Spot</a>
+            <a href="/">
+              <button type="button" class="btn btn-lg btn-light btn-outline-secondary">
+                  <i class="fas fa-home"></i>
+              </button>
+            </a>
           </div>
 
 
@@ -22,6 +27,7 @@
             <div class="input-group-prepend">
               <span class="input-group-text">First and last name</span>
             </div>
+            <input type="text" aria-label="Customer Name" class="form-control customerN">
          
             <div class="input-group">
                 <div class="input-group-prepend">
@@ -47,9 +53,9 @@
                   </div>
 
               </div>
-            
+            <button id="submitBtn">Submit</button>
           </div>
-        </div>
+        
         <footer class="footer">
             <div class="container">
               <p>
@@ -57,7 +63,20 @@
                 <a href="/api/waitlist">API Wait List</a>
       
         <script>
-
+          const theButton = document.getElementById('submitBtn');
+          theButton.addEventListener("click", mainFunc);
+          function mainFunc(e) {
+            e.preventDefault();
+            let getReservation = {
+              customerName: $(".customerN").val().trim(),
+              phoneNumber: $(".phoneN").val().trim(),
+              customerEmail: $(".emailA").val().trim(),
+              customerID: $(".uniqueID").val().trim()
+            };
+            $.post('/api/tables', getReservation)
+          }
+          
         </script>
 </body>
+<script defer="" src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
 </html>

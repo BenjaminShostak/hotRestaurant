@@ -26,4 +26,15 @@ apiRouter.post('/tables', (req, res) => {
     }
 })
 
+apiRouter.delete("/tables/clear", (req, res) => {
+    tables = [];
+    res.json('Tables cleared')
+});
+
+apiRouter.delete("/waitlist/clear", (req, res) => {
+    waitlist = [];
+    res.json("Waitlist cleared");
+});
+
+
 module.exports = apiRouter
