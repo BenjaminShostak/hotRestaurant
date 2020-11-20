@@ -68,6 +68,7 @@
               customerEmail: $(".emailA").val().trim(),
               customerID: $(".uniqueID").val().trim()
             };
+            $.post('/api/tables', getReservation)
           }
           
         </script>
