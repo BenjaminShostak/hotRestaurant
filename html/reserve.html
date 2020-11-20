@@ -48,7 +48,9 @@
                   </div>
 
               </div>
+              <a href="/">
             <button id="submitBtn">Submit</button>
+          </a>
           </div>
         
         <footer class="footer">
@@ -69,6 +71,8 @@
               customerID: $(".uniqueID").val().trim()
             };
             $.post('/api/tables', getReservation)
+          
+            
           }
           
         </script>
